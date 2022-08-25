@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Whack a mole</string>
+    <string name="empty">-</string>
+    <string name="time">Time: 00:%1$s</string>
+    <string name="bestScore">Best score:</string>
+    <string name="play">play</string>
+    <string name="rulesTitle">Rules of the game:</string>
+    <string name="rulesText">to whack more moles \nto exceed the best score.</string>
+    <string name="score">Score: %1$s</string>
+    <string name="scoreTitle">Score:</string>
+    <string name="app_logo">App Logo</string>
+    <string name="play_again">play again</string>
+</resources>
