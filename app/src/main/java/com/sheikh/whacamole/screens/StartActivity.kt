@@ -1,10 +1,12 @@
-package com.sheikh.whacamole
+package com.sheikh.whacamole.screens
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import com.sheikh.whacamole.R
+import com.sheikh.whacamole.view_model.MainViewModel
 import kotlinx.android.synthetic.main.activity_start.*
 
 class StartActivity : AppCompatActivity() {

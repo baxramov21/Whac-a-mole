@@ -1,10 +1,11 @@
-package com.sheikh.whacamole
+package com.sheikh.whacamole.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.sheikh.whacamole.R
 import kotlinx.android.synthetic.main.hole_item.view.*
 
 class HolesAdapter() :

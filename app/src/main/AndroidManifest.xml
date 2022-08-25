@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhacAMole">
         <activity
-            android:name=".ScoreActivity"
+            android:name=".screens.ScoreActivity"
             android:exported="false" />
         <activity
-            android:name=".GameActivity"
+            android:name=".screens.GameActivity"
             android:exported="false" />
         <activity
-            android:name=".StartActivity"
+            android:name=".screens.StartActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".screens.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

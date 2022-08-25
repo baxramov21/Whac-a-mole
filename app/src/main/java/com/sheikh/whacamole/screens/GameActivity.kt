@@ -1,4 +1,4 @@
-package com.sheikh.whacamole
+package com.sheikh.whacamole.screens
 
 import android.animation.ObjectAnimator
 import android.content.Intent
@@ -13,6 +13,9 @@ import androidx.core.view.get
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.sheikh.whacamole.adapter.HolesAdapter
+import com.sheikh.whacamole.R
+import com.sheikh.whacamole.view_model.MainViewModel
 import kotlinx.android.synthetic.main.activity_game.*
 
 class GameActivity : AppCompatActivity() {

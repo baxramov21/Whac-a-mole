@@ -1,10 +1,11 @@
-package com.sheikh.whacamole
+package com.sheikh.whacamole.screens
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
+import com.sheikh.whacamole.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

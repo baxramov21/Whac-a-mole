@@ -1,4 +1,4 @@
-package com.sheikh.whacamole
+package com.sheikh.whacamole.view_model
 
 import android.app.Application
 import android.content.SharedPreferences
