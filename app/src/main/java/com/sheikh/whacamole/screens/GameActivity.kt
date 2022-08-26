@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.ImageView
@@ -41,7 +42,6 @@ class GameActivity : AppCompatActivity() {
         adapter.holeImageIDList = imageIDList
         recyclerView.adapter = adapter
 
-        var randomizedImageView: ImageView? = null
         viewModel.time.observe(this) {
             // Show how much time left
             val timePattern = getString(R.string.time)
@@ -49,7 +49,7 @@ class GameActivity : AppCompatActivity() {
             timer.text = String.format(timePattern, leftSecs)
 
             // Show mole
-            randomizedImageView = showMole()
+            showMole()
         }
 
         onHoleClick(adapter)
@@ -73,6 +73,7 @@ class GameActivity : AppCompatActivity() {
                     score.text = String.format(scorePattern, currentScore)
                     imageViewClickedHole.setImageResource(R.drawable.whack)
                     imageViewClickedHole.shakeView()
+                    imageViewClickedHole.backToFirstState()
                 }
             }
         }
@@ -87,7 +88,15 @@ class GameActivity : AppCompatActivity() {
     private fun View.shakeView() {
         ObjectAnimator.ofFloat(this, View.TRANSLATION_Y, 30F, 0F, 30F).apply {
             interpolator = AccelerateDecelerateInterpolator()
-            duration = 800
+            duration = 1000
+            start()
+        }
+    }
+
+    private fun View.backToFirstState() {
+        ObjectAnimator.ofFloat(this, View.TRANSLATION_Y, 0F, 30F, 0F).apply {
+            interpolator = AccelerateDecelerateInterpolator()
+            duration = 1000
             start()
         }
     }
@@ -98,7 +107,7 @@ class GameActivity : AppCompatActivity() {
         return (0..maxRandom).random()
     }
 
-    private fun showMole(): ImageView {
+    private fun showMole() {
         // Show mole
         val randomHole = recyclerView[getRandomHole()] as ImageView
         randomHole.setImageResource(R.drawable.mole)
@@ -106,7 +115,6 @@ class GameActivity : AppCompatActivity() {
         Handler().postDelayed({
             randomHole.setImageResource(R.drawable.grass)
         }, milliSecs.toLong())
-        return randomHole
     }
 
     private fun startTimer() {

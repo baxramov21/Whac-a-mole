@@ -1,5 +1,6 @@
 package com.sheikh.whacamole.screens
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -17,15 +18,20 @@ class ScoreActivity : AppCompatActivity() {
         val viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         val highestScore = viewModel.getRecord()
         val intent = intent
-        val record = intent.getIntExtra("record",0)
+        val record = intent.getIntExtra("record", 0)
+        var scoreText = "$record"
+        var bestScoreText = "$highestScore"
+
         if (record > highestScore) {
             viewModel.setRecord(record)
-            score.text = "New record: $record"
-            bestScore.text = "$record"
+            scoreText = "New record: $record"
+            bestScoreText = "$record"
         }
+        score.text = scoreText
+        bestScore.text = bestScoreText
     }
 
     fun onClickRestartGame(view: View) {
-
+        startActivity(Intent(this,GameActivity::class.java))
     }
 }
